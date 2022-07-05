@@ -185,6 +185,7 @@ namespace Microsoft::Console::VirtualTerminal
             SetBackgroundColor = 11,
             SetCursorColor = 12,
             SetClipboard = 52,
+            ResetColor = 104,
             ResetForegroundColor = 110, // Not implemented
             ResetBackgroundColor = 111, // Not implemented
             ResetCursorColor = 112,

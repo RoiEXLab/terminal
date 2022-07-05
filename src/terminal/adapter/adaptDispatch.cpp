@@ -2246,6 +2246,25 @@ bool AdaptDispatch::SetColorTableEntry(const size_t tableIndex, const DWORD dwCo
     return true;
 }
 
+bool AdaptDispatch::ResetColorPalette()
+{
+    _renderSettings.ResetColorTable();
+
+    // If we're a conpty, always return false, so that we send the updated color
+    //      value to the terminal. Still handle the sequence so apps that use
+    //      the API or VT to query the values of the color table still read the
+    //      correct color.
+    if (_api.IsConsolePty())
+    {
+        return false;
+    }
+
+    // Update the screen colors if we're not a pty
+    // No need to force a redraw in pty mode.
+    _renderer.TriggerRedrawAll(true, true);
+    return true;
+}
+
 // Method Description:
 // - Sets the default foreground color to a new value
 // Arguments:

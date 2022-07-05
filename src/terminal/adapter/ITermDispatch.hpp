@@ -83,6 +83,7 @@ public:
     virtual bool EnableAlternateScroll(const bool enabled) = 0; // ?1007
     virtual bool EnableXtermBracketedPasteMode(const bool enabled) = 0; // ?2004
     virtual bool SetColorTableEntry(const size_t tableIndex, const DWORD color) = 0; // OSCColorTable
+    virtual bool ResetColorPalette() = 0; // OSC 104 reset color
     virtual bool SetDefaultForeground(const DWORD color) = 0; // OSCDefaultForeground
     virtual bool SetDefaultBackground(const DWORD color) = 0; // OSCDefaultBackground
     virtual bool AssignColor(const DispatchTypes::ColorItem item, const VTInt fgIndex, const VTInt bgIndex) = 0; // DECAC

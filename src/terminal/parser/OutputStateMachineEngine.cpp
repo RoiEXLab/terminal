@@ -811,6 +811,11 @@ bool OutputStateMachineEngine::ActionOscDispatch(const wchar_t /*wch*/,
         TermTelemetry::Instance().Log(TermTelemetry::Codes::OSCSCB);
         break;
     }
+    case OscActionCodes::ResetColor:
+    {
+        _dispatch->ResetColorPalette();
+        break;
+    }
     case OscActionCodes::ResetCursorColor:
     {
         success = _dispatch->SetCursorColor(INVALID_COLOR);

@@ -76,6 +76,7 @@ public:
     bool EnableAlternateScroll(const bool /*enabled*/) override { return false; } // ?1007
     bool EnableXtermBracketedPasteMode(const bool /*enabled*/) override { return false; } // ?2004
     bool SetColorTableEntry(const size_t /*tableIndex*/, const DWORD /*color*/) override { return false; } // OSCColorTable
+    bool ResetColorPalette() override { return false; } // OSC 104 reset color
     bool SetDefaultForeground(const DWORD /*color*/) override { return false; } // OSCDefaultForeground
     bool SetDefaultBackground(const DWORD /*color*/) override { return false; } // OSCDefaultBackground
     bool AssignColor(const DispatchTypes::ColorItem /*item*/, const VTInt /*fgIndex*/, const VTInt /*bgIndex*/) override { return false; } // DECAC
